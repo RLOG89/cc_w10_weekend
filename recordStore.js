@@ -10,8 +10,13 @@ RecordStore.prototype = {
     this.inventory.push(record);
   },
   listInventory: function() {
-    this.inventory.forEach(function(record) {
-      console.log(record)
+    // var output = ""
+    // this.inventory.forEach(function(record) {
+    //   output += record.toString;
+    // });
+    // return output;
+    return this.inventory.reduce(function(a , b){
+      return a + b
     });
   },
 
