@@ -17,15 +17,22 @@ describe('RecordStore', function() {
   });
 
   it('should have a name', function() {
-    assert.equal("Ricks", ricks.name)
+    assert.equal("Ricks", ricks.name);
   });
 
   it('should have a city', function() {
-    assert.equal("Glasgow", ricks.city)
+    assert.equal("Glasgow", ricks.city);
   });
 
   it('should have records in inventory', function() {
-    assert.equal(2, ricks.inventory.length)
-  })
+    assert.equal(2, ricks.inventory.length);
+  });
+
+  it('should add records to inventory', function() {
+    var oneMoreTime = new Record("Daft Punk", "One More Time", 10);
+    ricks.addRecord(oneMoreTime);
+    assert.equal(3, ricks.inventory.length);
+    assert.deepEqual(oneMoreTime, ricks.inventory[2]);
+  });
 
 });
