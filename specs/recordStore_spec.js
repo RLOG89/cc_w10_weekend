@@ -1,9 +1,20 @@
 var RecordStore = require('../RecordStore');
+var Record = require('../Record');
 var assert = require('assert');
 
-var ricks = new RecordStore("Ricks", "Glasgow")
+var ricks;
+var wagonWheel;
+var trains;
 
 describe('RecordStore', function() {
+
+  beforeEach(function() {
+    ricks = new RecordStore("Ricks", "Glasgow");
+    wagonWheel = new Record("Old Crow Medicine Show", "Wagon Wheel", 5);
+    trains = new Record("Porcupine Tree", "Trains", 10);
+    ricks.addRecord(wagonWheel);
+    ricks.addRecord(trains);
+  });
 
   it('should have a name', function() {
     assert.equal("Ricks", ricks.name)
@@ -12,5 +23,9 @@ describe('RecordStore', function() {
   it('should have a city', function() {
     assert.equal("Glasgow", ricks.city)
   });
+
+  it('should have records in inventory', function() {
+    assert.equal(2, ricks.inventory.length)
+  })
 
 });
