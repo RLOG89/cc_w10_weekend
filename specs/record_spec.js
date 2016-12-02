@@ -1,9 +1,11 @@
 var Record = require('../record');
 var assert = require('assert');
 
-var record = new Record("John Lennon", "Imagine", 10);
+var record = null;
 
 describe('record', function() {
+
+record = new Record("John Lennon", "Imagine", 10);
 
   it('should have an artist', function() {
     assert.equal("John Lennon", record.artist)
@@ -15,6 +17,10 @@ describe('record', function() {
 
   it('should have a price', function() {
     assert.equal(10, record.price)
+  });
+
+  it('should have a toString method', function() {
+    assert.equal("Imagine by John Lennon, priced at £10", record.toString());
   });
 
 });

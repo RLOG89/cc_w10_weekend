@@ -6,7 +6,7 @@ var Record = function(artist, title, price) {
 
 Record.prototype = {
   toString: function() {
-    return this.title + " by " + this.artist + " priced at " + this.price; 
+    return this.title + " by " + this.artist + ", priced at £" + this.price; 
   }
 }
 
