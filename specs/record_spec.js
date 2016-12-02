@@ -1,4 +1,4 @@
-var record = require('../record');
+var Record = require('../record');
 var assert = require('assert');
 
 describe('record', function() {
@@ -14,6 +14,6 @@ describe('record', function() {
   it('should have a price', function() {
     assert.equal()
   });
-  
+
 });
 
