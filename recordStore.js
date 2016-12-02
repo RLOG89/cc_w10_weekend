@@ -9,6 +9,11 @@ RecordStore.prototype = {
   addRecord: function(record) {
     this.inventory.push(record);
   },
+  listInventory: function() {
+    this.inventory.forEach(function(record) {
+      console.log(record)
+    });
+  },
 
 }
 
