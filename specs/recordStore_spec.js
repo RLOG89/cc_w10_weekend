@@ -2,11 +2,11 @@ var RecordStore = require('../RecordStore');
 var Record = require('../Record');
 var assert = require('assert');
 
-var ricks;
-var wagonWheel;
-var trains;
-
 describe('RecordStore', function() {
+
+var ricks = null;
+var wagonWheel = null;
+var trains = null;
 
   beforeEach(function() {
     ricks = new RecordStore("Ricks", "Glasgow");
@@ -14,6 +14,7 @@ describe('RecordStore', function() {
     trains = new Record("Porcupine Tree", "Trains", 10);
     ricks.addRecord(wagonWheel);
     ricks.addRecord(trains);
+    ricks.balance += 1000;
   });
 
   it('should have a name', function() {
@@ -33,6 +34,10 @@ describe('RecordStore', function() {
     ricks.addRecord(oneMoreTime);
     assert.equal(3, ricks.inventory.length);
     assert.deepEqual(oneMoreTime, ricks.inventory[2]);
+  });
+
+  it('should have a bank balance', function() {
+    assert.equal(1000, ricks.balance);
   });
 
 });
