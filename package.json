@@ -1,0 +1,14 @@
+{
+  "name": "weekend_record_store",
+  "version": "1.0.0",
+  "description": "JS Record Store",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "author": "Ross Loggie",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
