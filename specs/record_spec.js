@@ -1,18 +1,20 @@
 var Record = require('../record');
 var assert = require('assert');
 
+var record = new Record("John Lennon", "Imagine", 10);
+
 describe('record', function() {
 
   it('should have an artist', function() {
-    assert.equal()
+    assert.equal("John Lennon", record.artist)
   });
 
   it('should have a title', function() {
-    assert.equal()
+    assert.equal("Imagine", record.title)
   });
 
   it('should have a price', function() {
-    assert.equal()
+    assert.equal(10, record.price)
   });
 
 });
